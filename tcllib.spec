@@ -1,5 +1,5 @@
-Summary:	Libs to TCL
-Summary(pl):	Bibiliteki dla tcl-a
+Summary:	Libraries for TCL
+Summary(pl):	Biblioteki dla Tcl-a
 Name:		tcllib
 Version:	1.3
 Release:	1
@@ -10,16 +10,18 @@ Patch0:		%{name}-DESTDIR.patch
 Icon:		tcl.gif
 URL:		http://tcllib.sf.net/
 BuildRequires:	autoconf
+BuildRequires:	automake
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package is intended to be a collection of Tcl packages that provide
-utility functions useful to a large collection of Tcl programmers.
+This package is intended to be a collection of Tcl packages that
+provide utility functions useful to a large collection of Tcl
+programmers.
 
 %description -l pl
-Pakiet jest kolekcj± pakietów Tcl udostêpniaj±c± ró¿ne funkcje u¿yteczne dla
-wielu programistów tcl-a
+Pakiet jest zestawem pakietów Tcl udostêpniaj±cym ró¿ne funkcje
+u¿yteczne dla wielu programistów Tcl-a.
 
 %prep
 %setup  -q
