@@ -1,12 +1,12 @@
 Summary:	Libraries for TCL
 Summary(pl):	Biblioteki dla Tcl-a
 Name:		tcllib
-Version:	1.3
+Version:	1.4
 Release:	1
 License:	see license.terms
 Group:		Development/Languages/Tcl
 Source0:	http://dl.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
-Patch0:		%{name}-DESTDIR.patch
+# Source0-md5:	9a612118c2ccd5afabc8a42b8f3d068a
 Icon:		tcl.gif
 URL:		http://tcllib.sf.net/
 BuildRequires:	autoconf
@@ -25,7 +25,6 @@ u¿yteczne dla wielu programistów Tcl-a.
 
 %prep
 %setup  -q
-%patch0 -p0
 
 %build
 %{__aclocal}
