@@ -5,7 +5,7 @@ Version:	1.3
 Release:	1
 License:	see license.terms
 Group:		Development/Languages/Tcl
-Source0:	http://prdownloads.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Icon:		tcl.gif
 URL:		http://tcllib.sf.net/
