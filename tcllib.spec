@@ -37,9 +37,10 @@ u¿yteczne dla wielu programistów Tcl-a.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_prefix}/lib,%{_mandir}/man1}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT/%{_libdir}/tcllib1.6 $RPM_BUILD_ROOT/usr/lib/tcllib1.6.1
+mv $RPM_BUILD_ROOT%{_libdir}/tcllib1.6 $RPM_BUILD_ROOT%{_prefix}/lib/tcllib1.6.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,5 +48,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README license.terms examples
-/usr/lib/%{name}%{version}
+%{_prefix}/lib/%{name}%{version}
 %{_mandir}/man?/*
