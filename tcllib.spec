@@ -2,7 +2,7 @@ Summary:	Libraries for TCL
 Summary(pl):	Biblioteki dla Tcl-a
 Name:		tcllib
 Version:	1.6.1
-Release:	1
+Release:	2
 License:	see license.terms
 Group:		Development/Languages/Tcl
 Source0:	http://dl.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
