@@ -11,6 +11,7 @@ Icon:		tcl.gif
 URL:		http://tcllib.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	tcl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
