@@ -1,4 +1,4 @@
-Summary:	Libraries for TCL
+Summary:	Libraries for Tcl
 Summary(pl):	Biblioteki dla Tcl-a
 Name:		tcllib
 Version:	1.6.1
