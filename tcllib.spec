@@ -1,5 +1,5 @@
 Summary:	Libraries for Tcl
-Summary(pl):	Biblioteki dla Tcl-a
+Summary(pl.UTF-8):   Biblioteki dla Tcl-a
 Name:		tcllib
 Version:	1.6.1
 Release:	3
@@ -19,9 +19,9 @@ This package is intended to be a collection of Tcl packages that
 provide utility functions useful to a large collection of Tcl
 programmers.
 
-%description -l pl
-Pakiet jest zestawem pakietów Tcl udostêpniaj±cym ró¿ne funkcje
-u¿yteczne dla wielu programistów Tcl-a.
+%description -l pl.UTF-8
+Pakiet jest zestawem pakietÃ³w Tcl udostÄ™pniajÄ…cym rÃ³Å¼ne funkcje
+uÅ¼yteczne dla wielu programistÃ³w Tcl-a.
 
 %prep
 %setup  -q
