@@ -1,12 +1,12 @@
 Summary:	Libraries for Tcl
 Summary(pl.UTF-8):	Biblioteki dla Tcl-a
 Name:		tcllib
-Version:	1.6.1
-Release:	3
+Version:	1.9
+Release:	1
 License:	see license.terms
 Group:		Development/Languages/Tcl
 Source0:	http://dl.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
-# Source0-md5:	498335f8c5b3093f502d6bd0ab74abff
+# Source0-md5:	17d9ae35b1c6fde1d79c5b1423416cd2
 URL:		http://tcllib.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -39,7 +39,7 @@ install -d $RPM_BUILD_ROOT{%{_prefix}/lib,%{_mandir}/man1}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv $RPM_BUILD_ROOT%{_libdir}/tcllib1.6 $RPM_BUILD_ROOT%{_prefix}/lib/tcllib1.6.1
+mv $RPM_BUILD_ROOT%{_libdir}/tcllib%{version} $RPM_BUILD_ROOT%{_prefix}/lib/tcllib%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
