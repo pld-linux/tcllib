@@ -2,7 +2,7 @@ Summary:	Libraries for Tcl
 Summary(pl.UTF-8):	Biblioteki dla Tcl-a
 Name:		tcllib
 Version:	1.9
-Release:	1
+Release:	2
 License:	see license.terms
 Group:		Development/Languages/Tcl
 Source0:	http://dl.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
@@ -29,17 +29,16 @@ użyteczne dla wielu programistów Tcl-a.
 %build
 %{__aclocal}
 %{__autoconf}
-%configure
+%configure \
+	--libdir=%{_prefix}/lib
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_prefix}/lib,%{_mandir}/man1}
+install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
-mv $RPM_BUILD_ROOT%{_libdir}/tcllib%{version} $RPM_BUILD_ROOT%{_prefix}/lib/tcllib%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,5 +46,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README license.terms examples
+%attr(755,root,root) %{_bindir}/*
 %{_prefix}/lib/%{name}%{version}
 %{_mandir}/man?/*
