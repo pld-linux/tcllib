@@ -1,12 +1,12 @@
 Summary:	Libraries for Tcl
 Summary(pl.UTF-8):	Biblioteki dla Tcl-a
 Name:		tcllib
-Version:	1.11.1
+Version:	1.12
 Release:	1
 License:	see license.terms
 Group:		Development/Languages/Tcl
 Source0:	http://dl.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
-# Source0-md5:	53a4669f80d579124a93200825c4c2e8
+# Source0-md5:	67d22482fe56accb878dc16e0cd19da4
 URL:		http://tcllib.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -47,5 +47,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README license.terms examples
 %attr(755,root,root) %{_bindir}/*
-%{_prefix}/lib/%{name}1.11
+%{_prefix}/lib/%{name}1.12
 %{_mandir}/man?/*
