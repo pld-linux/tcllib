@@ -2,7 +2,7 @@ Summary:	Libraries for Tcl
 Summary(pl.UTF-8):	Biblioteki dla Tcl-a
 Name:		tcllib
 Version:	1.12
-Release:	1
+Release:	2
 License:	see license.terms
 Group:		Development/Languages/Tcl
 Source0:	http://dl.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
@@ -39,6 +39,9 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# conflicts with tcl-devel
+%{__rm} $RPM_BUILD_ROOT%{_mandir}/mann/msgcat.n
 
 %clean
 rm -rf $RPM_BUILD_ROOT
