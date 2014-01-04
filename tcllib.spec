@@ -5,7 +5,7 @@ Version:	1.15
 Release:	1
 License:	see license.terms
 Group:		Development/Languages/Tcl
-Source0:	http://dl.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
 # Source0-md5:	7a0525912e8863f8d4360ab10e5450f8
 URL:		http://tcllib.sourceforge.net/
 BuildRequires:	autoconf
