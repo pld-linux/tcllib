@@ -29,8 +29,16 @@ użyteczne dla wielu programistów Tcl-a.
 %setup -q
 %patch0 -p1
 
-# move manuals to proper namespaces, consistent with where they are exported,
-# also avoiding conflicts with the same names in other namespaces
+# Move manuals to proper namespaces, consistent with where they are exported,
+# also avoiding conflicts with the same names in other namespaces.
+# Upstream names are most commonly based on the last element, or have
+# "namespace_" prefix.
+# Unify man pages regarding [sub]namespace or function to the form
+# namespace[::subnamespace] or namespace::[subnamespace::]function;
+# for other man pages, like introductions, namespace::thing or
+# namespace_thing forms might be used.
+# Note: some man pages have "tcllib_" prefix because of conflict with
+# core tcl man pages (e.g. when namespace is identical to tcl keyword).
 %{__mv} modules/base32/base32{,::}core.man
 %{__mv} modules/base32/base32{,::}hex.man
 %{__mv} modules/bench/bench{_read,::in}.man
