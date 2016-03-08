@@ -1,13 +1,12 @@
 Summary:	Libraries for Tcl
 Summary(pl.UTF-8):	Biblioteki dla Tcl-a
 Name:		tcllib
-Version:	1.15
-Release:	2
+Version:	1.18
+Release:	1
 License:	BSD-like (see license.terms)
 Group:		Development/Languages/Tcl
-Source0:	http://downloads.sourceforge.net/tcllib/%{name}-%{version}.tar.gz
-# Source0-md5:	7a0525912e8863f8d4360ab10e5450f8
-Patch0:		%{name}-man.patch
+Source0:	http://downloads.sourceforge.net/tcllib/%{name}-%{version}.tar.bz2
+# Source0-md5:	ee374f6915c9465914f2f4366a8157c9
 URL:		http://tcllib.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -27,7 +26,6 @@ użyteczne dla wielu programistów Tcl-a.
 
 %prep
 %setup -q
-%patch0 -p1
 
 # Move manuals to proper namespaces, consistent with where they are exported,
 # also avoiding conflicts with the same names in other namespaces.
@@ -61,42 +59,42 @@ użyteczne dla wielu programistów Tcl-a.
 %{__mv} modules/doctools2base/{nroff_manmacros,doctools::nroff::man_macros}.man
 %{__mv} modules/doctools2base/{tcl_parse,doctools::tcl::parse}.man
 %{__mv} modules/doctools2base/{tcllib_msgcat,doctools::msgcat}.man
-%{__mv} modules/doctools2idx/{,doctools2idx_}container.man
-%{__mv} modules/doctools2idx/{,doctools::idx::}export.man
 %{__mv} modules/doctools2idx/{export_,doctools::idx::export::}docidx.man
-%{__mv} modules/doctools2idx/{export_,doctools::idx::export::}html.man
-%{__mv} modules/doctools2idx/{export_,doctools::idx::export::}json.man
-%{__mv} modules/doctools2idx/{export_,doctools::idx::export::}nroff.man
-%{__mv} modules/doctools2idx/{export_,doctools::idx::export::}text.man
-%{__mv} modules/doctools2idx/{export_,doctools::idx::export::}wiki.man
-%{__mv} modules/doctools2idx/{,doctools::idx::}import.man
+%{__mv} modules/doctools2idx/{idx_,doctools2idx_}container.man
+%{__mv} modules/doctools2idx/{idx_,doctools::idx::}export.man
+%{__mv} modules/doctools2idx/{idx_,doctools::idx::}import.man
+%{__mv} modules/doctools2idx/{idx_export_,doctools::idx::export::}html.man
+%{__mv} modules/doctools2idx/{idx_export_,doctools::idx::export::}json.man
+%{__mv} modules/doctools2idx/{idx_export_,doctools::idx::export::}nroff.man
+%{__mv} modules/doctools2idx/{idx_export_,doctools::idx::export::}text.man
+%{__mv} modules/doctools2idx/{idx_export_,doctools::idx::export::}wiki.man
+%{__mv} modules/doctools2idx/{idx_import_,doctools::idx::import::}json.man
 %{__mv} modules/doctools2idx/{import_,doctools::idx::import::}docidx.man
-%{__mv} modules/doctools2idx/{import_,doctools::idx::import::}json.man
-%{__mv} modules/doctools2idx/{,doctools2idx_}introduction.man
-%{__mv} modules/doctools2idx/{msgcat_,doctools::msgcat::idx::}c.man
-%{__mv} modules/doctools2idx/{msgcat_,doctools::msgcat::idx::}de.man
-%{__mv} modules/doctools2idx/{msgcat_,doctools::msgcat::idx::}en.man
-%{__mv} modules/doctools2idx/{msgcat_,doctools::msgcat::idx::}fr.man
-%{__mv} modules/doctools2idx/{,doctools::idx::}parse.man
-%{__mv} modules/doctools2idx/{,doctools::idx::}structure.man
-%{__mv} modules/doctools2toc/{,doctools2toc_}container.man
-%{__mv} modules/doctools2toc/{,doctools::toc::}export.man
+%{__mv} modules/doctools2idx/{idx_,doctools2idx_}introduction.man
+%{__mv} modules/doctools2idx/{idx_msgcat_,doctools::msgcat::idx::}c.man
+%{__mv} modules/doctools2idx/{idx_msgcat_,doctools::msgcat::idx::}de.man
+%{__mv} modules/doctools2idx/{idx_msgcat_,doctools::msgcat::idx::}en.man
+%{__mv} modules/doctools2idx/{idx_msgcat_,doctools::msgcat::idx::}fr.man
+%{__mv} modules/doctools2idx/{idx_,doctools::idx::}parse.man
+%{__mv} modules/doctools2idx/{idx_,doctools::idx::}structure.man
 %{__mv} modules/doctools2toc/{export_,doctools::toc::export::}doctoc.man
-%{__mv} modules/doctools2toc/{export_,doctools::toc::export::}html.man
-%{__mv} modules/doctools2toc/{export_,doctools::toc::export::}json.man
-%{__mv} modules/doctools2toc/{export_,doctools::toc::export::}nroff.man
-%{__mv} modules/doctools2toc/{export_,doctools::toc::export::}text.man
-%{__mv} modules/doctools2toc/{export_,doctools::toc::export::}wiki.man
-%{__mv} modules/doctools2toc/{,doctools::toc::}import.man
 %{__mv} modules/doctools2toc/{import_,doctools::toc::import::}doctoc.man
-%{__mv} modules/doctools2toc/{import_,doctools::toc::import::}json.man
-%{__mv} modules/doctools2toc/{,doctools2toc_}introduction.man
-%{__mv} modules/doctools2toc/{msgcat_,doctools::msgcat::toc::}c.man
-%{__mv} modules/doctools2toc/{msgcat_,doctools::msgcat::toc::}de.man
-%{__mv} modules/doctools2toc/{msgcat_,doctools::msgcat::toc::}en.man
-%{__mv} modules/doctools2toc/{msgcat_,doctools::msgcat::toc::}fr.man
-%{__mv} modules/doctools2toc/{,doctools::toc::}parse.man
-%{__mv} modules/doctools2toc/{,doctools::toc::}structure.man
+%{__mv} modules/doctools2toc/{toc_,doctools2toc_}container.man
+%{__mv} modules/doctools2toc/{toc_,doctools::toc::}export.man
+%{__mv} modules/doctools2toc/{toc_export_,doctools::toc::export::}html.man
+%{__mv} modules/doctools2toc/{toc_export_,doctools::toc::export::}json.man
+%{__mv} modules/doctools2toc/{toc_export_,doctools::toc::export::}nroff.man
+%{__mv} modules/doctools2toc/{toc_export_,doctools::toc::export::}text.man
+%{__mv} modules/doctools2toc/{toc_export_,doctools::toc::export::}wiki.man
+%{__mv} modules/doctools2toc/{toc_,doctools::toc::}import.man
+%{__mv} modules/doctools2toc/{toc_import_,doctools::toc::import::}json.man
+%{__mv} modules/doctools2toc/{toc_,doctools2toc_}introduction.man
+%{__mv} modules/doctools2toc/{toc_msgcat_,doctools::msgcat::toc::}c.man
+%{__mv} modules/doctools2toc/{toc_msgcat_,doctools::msgcat::toc::}de.man
+%{__mv} modules/doctools2toc/{toc_msgcat_,doctools::msgcat::toc::}en.man
+%{__mv} modules/doctools2toc/{toc_msgcat_,doctools::msgcat::toc::}fr.man
+%{__mv} modules/doctools2toc/{toc_,doctools::toc::}parse.man
+%{__mv} modules/doctools2toc/{toc_,doctools::toc::}structure.man
 %{__mv} modules/fileutil/{,fileutil::}multi.man
 %{__mv} modules/fileutil/{multiop,fileutil::multi::op}.man
 %{__mv} modules/fileutil/{,fileutil::}traverse.man
@@ -136,6 +134,7 @@ użyteczne dla wielu programistów Tcl-a.
 %{__mv} modules/math/{,math::}calculus.man
 %{__mv} modules/math/{,math::}constants.man
 %{__mv} modules/math/{,math::}decimal.man
+%{__mv} modules/math/{,math::}exact.man
 %{__mv} modules/math/{,math::}fourier.man
 %{__mv} modules/math/{,math::}fuzzy.man
 %{__mv} modules/math/{,math::}interpolate.man
@@ -157,6 +156,7 @@ użyteczne dla wielu programistów Tcl-a.
 %{__mv} modules/nns/{nns_,nameserv::}common.man
 %{__mv} modules/nns/{nns_,nameserv::}protocol.man
 %{__mv} modules/nns/{nns_,nameserv::}server.man
+%{__mv} modules/ooutil/{oo,oo::}util.man
 %{__mv} modules/page/{page_,page::}pluginmgr.man
 %{__mv} modules/page/{page_util_,page::util::}flow.man
 %{__mv} modules/page/{page_util_norm_,page::util::norm::}lemon.man
@@ -195,9 +195,15 @@ użyteczne dla wielu programistów Tcl-a.
 %{__mv} modules/pt/{pt_tclparam_config_,pt::tclparam::configuration::}tcloo.man
 %{__mv} modules/ripemd/{,ripemd::}ripemd128.man
 %{__mv} modules/ripemd/{,ripemd::}ripemd160.man
+%{__mv} modules/sasl/{gtoken,SASL::XGoogleToken}.man
+%{__mv} modules/sasl/{ntlm,SASL::NTLM}.man
+%{__mv} modules/sasl/{sasl,SASL}.man
+%{__mv} modules/sasl/{scram,SASL::SCRAM}.man
 %{__mv} modules/simulation/{,simulation::}annealing.man
 %{__mv} modules/simulation/{,simulation::}montecarlo.man
 %{__mv} modules/simulation/{simulation_,simulation::}random.man
+%{__mv} modules/string/{,string::}token.man
+%{__mv} modules/string/{token_shell,string::token::shell}.man
 %{__mv} modules/stringprep/{stringprep_,stringprep::}data.man
 %{__mv} modules/stringprep/{unicode_,unicode::}data.man
 %{__mv} modules/struct/{,struct::}disjointset.man
@@ -227,6 +233,8 @@ użyteczne dla wielu programistów Tcl-a.
 %{__mv} modules/term/{,term::}receive.man
 %{__mv} modules/term/{term_,term::receive::}bind.man
 %{__mv} modules/term/{term_,term::}send.man
+%{__mv} modules/tool/{,tool_}meta.man
+%{__mv} modules/tool/{tool_,tool::}dict_ensemble.man
 %{__mv} modules/textutil/{,textutil::}adjust.man
 %{__mv} modules/textutil/{,textutil::}expander.man
 %{__mv} modules/textutil/{,textutil::}repeat.man
@@ -259,34 +267,39 @@ użyteczne dla wielu programistów Tcl-a.
 %{__mv} modules/valtype/{,valtype::}verhoeff.man
 %{__mv} modules/virtchannel_base/{,tcl::chan::}cat.man
 %{__mv} modules/virtchannel_base/{,tcl::chan::}facade.man
-%{__mv} modules/virtchannel_base/{,tcl::chan::}fifo.man
-%{__mv} modules/virtchannel_base/{,tcl::chan::}fifo2.man
 %{__mv} modules/virtchannel_base/{,tcl::chan::}halfpipe.man
-%{__mv} modules/virtchannel_base/{,tcl::chan::}memchan.man
-%{__mv} modules/virtchannel_base/{,tcl::chan::}null.man
 %{__mv} modules/virtchannel_base/{,tcl::chan::}nullzero.man
-%{__mv} modules/virtchannel_base/{,tcl::chan::}random.man
 %{__mv} modules/virtchannel_base/{,tcl::chan::}randseed.man
 %{__mv} modules/virtchannel_base/{,tcl::chan::}std.man
-%{__mv} modules/virtchannel_base/{,tcl::chan::}string.man
+%{__mv} modules/virtchannel_base/{tcllib_,tcl::chan::}fifo.man
+%{__mv} modules/virtchannel_base/{tcllib_,tcl::chan::}fifo2.man
+%{__mv} modules/virtchannel_base/{tcllib_,tcl::chan::}memchan.man
+%{__mv} modules/virtchannel_base/{tcllib_,tcl::chan::}null.man
+%{__mv} modules/virtchannel_base/{tcllib_,tcl::chan::}random.man
+%{__mv} modules/virtchannel_base/{tcllib_,tcl::chan::}string.man
+%{__mv} modules/virtchannel_base/{tcllib_,tcl::chan::}variable.man
+%{__mv} modules/virtchannel_base/{tcllib_,tcl::chan::}zero.man
 %{__mv} modules/virtchannel_base/{,tcl::chan::}textwindow.man
-%{__mv} modules/virtchannel_base/{,tcl::chan::}variable.man
-%{__mv} modules/virtchannel_base/{,tcl::chan::}zero.man
 %{__mv} modules/virtchannel_core/{,tcl::chan::}core.man
 %{__mv} modules/virtchannel_core/{,tcl::chan::}events.man
 %{__mv} modules/virtchannel_core/{transformcore,tcl::transform::core}.man
 %{__mv} modules/virtchannel_transform/{,tcl::transform::}adler32.man
-%{__mv} modules/virtchannel_transform/{,tcl::transform::}base64.man
-%{__mv} modules/virtchannel_transform/{,tcl::transform::}counter.man
-%{__mv} modules/virtchannel_transform/{,tcl::transform::}crc32.man
 %{__mv} modules/virtchannel_transform/{,tcl::transform::}hex.man
 %{__mv} modules/virtchannel_transform/{,tcl::transform::}identity.man
 %{__mv} modules/virtchannel_transform/{,tcl::transform::}limitsize.man
 %{__mv} modules/virtchannel_transform/{,tcl::transform::}observe.man
-%{__mv} modules/virtchannel_transform/{,tcl::transform::}otp.man
 %{__mv} modules/virtchannel_transform/{,tcl::transform::}rot.man
 %{__mv} modules/virtchannel_transform/{,tcl::transform::}spacer.man
-%{__mv} modules/virtchannel_transform/{,tcl::transform::}zlib.man
+%{__mv} modules/virtchannel_transform/{tcllib_,tcl::transform::}zlib.man
+%{__mv} modules/virtchannel_transform/{vt_,tcl::transform::}base64.man
+%{__mv} modules/virtchannel_transform/{vt_,tcl::transform::}counter.man
+%{__mv} modules/virtchannel_transform/{vt_,tcl::transform::}crc32.man
+%{__mv} modules/virtchannel_transform/{vt_,tcl::transform::}otp.man
+%{__mv} modules/zip/{,zipfile::}decode.man
+%{__mv} modules/zip/{,zipfile::}encode.man
+%{__mv} modules/zip/{,zipfile::}mkzip.man
+# force regeneration
+%{__rm} -r idoc/{man,www}
 
 %build
 %{__aclocal}
@@ -295,6 +308,9 @@ użyteczne dla wielu programistów Tcl-a.
 	--libdir=%{_prefix}/lib
 %{__make}
 
+#%{__make} nroff-doc
+tclsh sak.tcl localdoc
+
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
@@ -302,7 +318,11 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__mv} $RPM_BUILD_ROOT%{_mandir}/mann/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+# installed with wrong extension
+for f in apps/*.man ; do
+	bn="$(basename $f .man)"
+	%{__mv} $RPM_BUILD_ROOT%{_mandir}/mann/${bn}.n $RPM_BUILD_ROOT%{_mandir}/man1/${bn}.1
+done
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -315,6 +335,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/nnsd
 %attr(755,root,root) %{_bindir}/nnslog
 %attr(755,root,root) %{_bindir}/page
+%attr(755,root,root) %{_bindir}/pt
 %attr(755,root,root) %{_bindir}/tcldocstrip
 %{_prefix}/lib/%{name}%{version}
 %{_mandir}/man1/dtplite.1*
@@ -322,5 +343,134 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man1/nnsd.1*
 %{_mandir}/man1/nnslog.1*
 %{_mandir}/man1/page.1*
+%{_mandir}/man1/pt.1*
 %{_mandir}/man1/tcldocstrip.1*
-%{_mandir}/mann/*.n*
+%{_mandir}/mann/S3.n*
+%{_mandir}/mann/SASL*.n*
+%{_mandir}/mann/aes.n*
+%{_mandir}/mann/ascii85.n*
+%{_mandir}/mann/asn.n*
+%{_mandir}/mann/autoproxy.n*
+%{_mandir}/mann/base32*.n*
+%{_mandir}/mann/base64.n*
+%{_mandir}/mann/bee.n*
+%{_mandir}/mann/bench*.n*
+%{_mandir}/mann/bibtex.n*
+%{_mandir}/mann/blowfish.n*
+%{_mandir}/mann/cache::async.n*
+%{_mandir}/mann/clock::*.n*
+%{_mandir}/mann/cmdline.n*
+%{_mandir}/mann/comm.n*
+%{_mandir}/mann/comm_wire.n*
+%{_mandir}/mann/control.n*
+%{_mandir}/mann/coroutine::auto.n*
+%{_mandir}/mann/counter.n*
+%{_mandir}/mann/crc::*.n*
+%{_mandir}/mann/cron.n*
+%{_mandir}/mann/csv.n*
+%{_mandir}/mann/debug*.n*
+%{_mandir}/mann/des.n*
+%{_mandir}/mann/dicttool.n*
+%{_mandir}/mann/docidx_*.n*
+%{_mandir}/mann/docstrip*.n*
+%{_mandir}/mann/doctoc_*.n*
+%{_mandir}/mann/doctools*.n*
+%{_mandir}/mann/docutils::*.n*
+%{_mandir}/mann/fileutil*.n*
+%{_mandir}/mann/ftp*.n*
+%{_mandir}/mann/generator.n*
+%{_mandir}/mann/gpx.n*
+%{_mandir}/mann/grammar::*.n*
+%{_mandir}/mann/hook.n*
+%{_mandir}/mann/html.n*
+%{_mandir}/mann/htmlparse.n*
+%{_mandir}/mann/huddle.n*
+%{_mandir}/mann/ident.n*
+%{_mandir}/mann/imap4.n*
+%{_mandir}/mann/inifile.n*
+%{_mandir}/mann/interp::*.n*
+%{_mandir}/mann/irc.n*
+%{_mandir}/mann/javascript.n*
+%{_mandir}/mann/jpeg.n*
+%{_mandir}/mann/json*.n*
+%{_mandir}/mann/lambda.n*
+%{_mandir}/mann/ldap.n*
+%{_mandir}/mann/ldapx.n*
+%{_mandir}/mann/log.n*
+%{_mandir}/mann/logger*.n*
+%{_mandir}/mann/map::*.n*
+%{_mandir}/mann/mapproj.n*
+%{_mandir}/mann/math*.n*
+%{_mandir}/mann/md4.n*
+%{_mandir}/mann/md5.n*
+%{_mandir}/mann/md5crypt.n*
+%{_mandir}/mann/oo::util.n*
+%{_mandir}/mann/mime.n*
+%{_mandir}/mann/mpexpand.n*
+%{_mandir}/mann/multiplexer.n*
+%{_mandir}/mann/nameserv::*.n*
+%{_mandir}/mann/namespacex.n*
+%{_mandir}/mann/ncgi.n*
+%{_mandir}/mann/nettool.n*
+%{_mandir}/mann/nmea.n*
+%{_mandir}/mann/nns_*.n*
+%{_mandir}/mann/nntp.n*
+%{_mandir}/mann/ntp_time.n*
+%{_mandir}/mann/oauth.n*
+%{_mandir}/mann/otp.n*
+%{_mandir}/mann/page*.n*
+%{_mandir}/mann/picoirc.n*
+%{_mandir}/mann/pkg_dtplite.n*
+%{_mandir}/mann/pki.n*
+%{_mandir}/mann/pluginmgr.n*
+%{_mandir}/mann/png.n*
+%{_mandir}/mann/pop3*.n*
+%{_mandir}/mann/processman.n*
+%{_mandir}/mann/profiler.n*
+%{_mandir}/mann/pt::*.n*
+%{_mandir}/mann/pt_*.n*
+%{_mandir}/mann/rc4.n*
+%{_mandir}/mann/rcs.n*
+%{_mandir}/mann/report.n*
+%{_mandir}/mann/rest.n*
+%{_mandir}/mann/ripemd::*.n*
+%{_mandir}/mann/sha1.n*
+%{_mandir}/mann/sha256.n*
+%{_mandir}/mann/simulation::*.n*
+%{_mandir}/mann/smtp*.n*
+%{_mandir}/mann/snit.n*
+%{_mandir}/mann/snitfaq.n*
+%{_mandir}/mann/soundex.n*
+%{_mandir}/mann/stooop.n*
+%{_mandir}/mann/string::*.n*
+%{_mandir}/mann/stringprep*.n*
+%{_mandir}/mann/struct::*.n*
+%{_mandir}/mann/switched.n*
+%{_mandir}/mann/tar.n*
+%{_mandir}/mann/tcl::chan::*.n*
+%{_mandir}/mann/tcl::transform::*.n*
+%{_mandir}/mann/tcldes*.n*
+%{_mandir}/mann/tcllib_*.n*
+%{_mandir}/mann/tepam_*.n*
+%{_mandir}/mann/term*.n*
+%{_mandir}/mann/textutil*.n*
+%{_mandir}/mann/tie*.n*
+%{_mandir}/mann/tiff.n*
+%{_mandir}/mann/tool.n*
+%{_mandir}/mann/tool_meta.n*
+%{_mandir}/mann/tool::dict_ensemble.n*
+%{_mandir}/mann/transfer::*.n*
+%{_mandir}/mann/treeql.n*
+%{_mandir}/mann/uevent*.n*
+%{_mandir}/mann/unicode*.n*
+%{_mandir}/mann/units.n*
+%{_mandir}/mann/uri*.n*
+%{_mandir}/mann/uuencode.n*
+%{_mandir}/mann/uuid.n*
+%{_mandir}/mann/valtype::*.n*
+%{_mandir}/mann/websocket.n*
+%{_mandir}/mann/wip.n*
+%{_mandir}/mann/xsxp.n*
+%{_mandir}/mann/yaml.n*
+%{_mandir}/mann/yencode.n*
+%{_mandir}/mann/zipfile::*.n*
