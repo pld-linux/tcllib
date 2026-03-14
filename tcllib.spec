@@ -2,7 +2,7 @@ Summary:	Libraries for Tcl
 Summary(pl.UTF-8):	Biblioteki dla Tcl-a
 Name:		tcllib
 Version:	1.18
-Release:	1
+Release:	2
 License:	BSD-like (see license.terms)
 Group:		Development/Languages/Tcl
 Source0:	http://downloads.sourceforge.net/tcllib/%{name}-%{version}.tar.bz2
@@ -309,6 +309,8 @@ użyteczne dla wielu programistów Tcl-a.
 %{__make}
 
 #%{__make} nroff-doc
+install -d embedded/man/files/modules
+cp -a modules/common-text embedded/man/files/modules/
 tclsh sak.tcl localdoc
 
 %install
@@ -317,6 +319,9 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# normalize generated app shebangs for PLD policy
+%{__sed} -i '1s|^#![[:space:]]*/usr/bin/env tclsh$|#!%{__tclsh}|' $RPM_BUILD_ROOT%{_bindir}/*
 
 # installed with wrong extension
 for f in apps/*.man ; do
